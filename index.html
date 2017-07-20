@@ -1,0 +1,1221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Carlos B Martini</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="keywords" content="Carlos B Martini, artist, Chicago, sketching">
+<meta name="description" content="Carlos">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+
+<!--[if lt IE 9]>
+<link href="css/iemain.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+	<!-- custom scrollbar stylesheet -->
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css">
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<!--<script type="text/javascript" src="js/jquery.mobile-1.4.3.min.js"></script> -->
+    
+    <!-- Add Insta library -->
+<script type="text/javascript" src="js/instafeed.min.js"></script>
+      
+
+<script type="text/javascript">
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: '179234058',
+		limit: '6',
+		//get: 'tagged',
+        tagName: 'sky',
+		accessToken: '179234058.1677ed0.efc354f9189d4640843797f3c4c5dd82'
+    });
+    userFeed.run();
+</script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="js/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.5" media="screen" >
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-buttons.css" >		
+	<script type="text/javascript" src="js/jquery.fancybox-buttons.js"></script>
+    
+     <!-- Add Sticky library -->
+	<script type="text/javascript" src="js/jquery.sticky.js"></script>
+    
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			
+		<!-- STICKY NAV CALL -->	
+		$("#menu").sticky({ topSpacing: 0 });
+		$('.menuListMobile').change(function(){TopicSelect(this.value);});	
+		$(".menuListMobile").on("click touchstart", function() {TopicSelect(this.value);});
+		
+		//$(".menuListMobile").on("change", function () {TopicSelect(this.value); });				
+		//$(".menuListMobile").live( "change", function() {alert( "Goodbye!" );});		
+		//$(“#menu select”).change(function(){ window.location = $(this).val(); });
+						
+		<!-- MENU EASE CALL -->
+		$('.menuLinx').click(function() {
+			var target = '#' + $(this).attr("name");
+			$('html,body').animate({
+			scrollTop: $(target).offset().top
+			}, 600);
+		});
+		
+		$('.mobileMenuLinx').click(function() {
+			var target1 = '#' + $(this).attr("name");
+			$('html,body').animate({
+			scrollTop: ($(target1).offset().top-40)
+			}, 700);
+		});
+		
+		$('#homeText3 a').click(function() {
+			var target3 = '#' + $(this).attr("name");
+			$('html,body').animate({
+			scrollTop: $(target3).offset().top
+			}, 500);
+		});
+	
+		$(window).scroll(function() {
+			var height =  $(window).innerHeight;
+			var menu_distance = $('#menu').offset().top;
+			var work_distance = $('#workJump').offset().top;
+			var shows_distance =  $('#showsJump').offset().top;
+			var contact_distance = $('#contactJump').offset().top;
+			menu_distance -= 50;
+			work_distance -= 50;
+			shows_distance -= 50;
+			contact_distance -= 50;
+		
+            if($(this).scrollTop() < menu_distance) {
+                menu_hover('up');	
+				$('#toTop').fadeOut();
+            }
+			
+			if($(this).scrollTop() > work_distance &&  $(this).scrollTop() < shows_distance) {
+                menu_hover('work');	
+				$('#toTop').fadeIn();
+            }
+			
+			if($(this).scrollTop() > shows_distance &&  $(this).scrollTop() < contact_distance) {
+                menu_hover('shows');	
+            }
+			
+			if($(this).scrollTop() > contact_distance) {
+                menu_hover('contact');	
+            }
+				
+        });
+		
+		$('#toTop').click(function() {
+            $('body,html').animate({scrollTop:0},800);
+        });
+		
+			$('.fancybox').fancybox();		
+
+			$('.fancybox-buttons').fancybox({openEffect  : 'none',closeEffect : 'none',prevEffect : 'none',nextEffect : 'none',closeBtn  : false,helpers : {title : {type : 'inside'},buttons	: {}},afterLoad : function() {this.title = (this.title ? '' + this.title : '' ) + '<br>' + (this.index + 1) + ' of ' + this.group.length ;
+				}
+			});
+
+		});
+		
+		function MM_preloadImages() { //v3.0
+  		var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    	var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    	if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}}
+	</script>
+    
+<script type="text/javascript">
+function menu_hover(id) {
+	switch(id)
+	{
+	case "work":
+	  $('#menuWork a').css('color','#22b7d9');
+	  $('#menuShows a').css('color','#FFFFFF');
+	  $('#menuContact a').css('color','#FFFFFF');
+	  break;
+	case "shows":
+	  $('#menuWork a').css('color','#FFFFFF');
+	  $('#menuShows a').css('color','#efa41f');
+	  $('#menuContact a').css('color','#FFFFFF');
+	  break;
+	case "contact":
+	  $('#menuWork a').css('color','#FFFFFF');
+	  $('#menuShows a').css('color','#FFFFFF');
+	  $('#menuContact a').css('color','#df4898');
+	  break;
+	case "up":
+	  $('#menuWork a').css('color','#FFFFFF');
+	  $('#menuShows a').css('color','#FFFFFF');
+	  $('#menuContact a').css('color','#FFFFFF');
+	  default:
+	  break;
+	}
+}
+</script>
+    
+<script type="text/javascript">
+function TopicSelect(id) {
+	
+	switch(id)
+	{
+	case "abstract":
+		$('#abstract').css('display','block');
+	  	$('#aquatic').css('display','none');
+		$('#birds').css('display','none');
+		$('#characters').css('display','none');
+		$('#guatemala').css('display','none');
+		$('#insects').css('display','none');
+		$('#nature').css('display','none');
+	  	$('#abstract_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#383838');
+		$('#aquatic_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#birds_item .links').css('color','#FFFFFF');
+		$('#characters_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#characters_item .links').css('color','#FFFFFF');
+		$('#guatemala_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#FFFFFF');
+		$('#insects_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#insects_item .links').css('color','#FFFFFF');
+		$('#nature_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#nature_item .links').css('color','#FFFFFF');
+	  break;
+	case "aquatic":
+		$('#aquatic').css('display','block');
+	  	$('#abstract').css('display','none');
+		$('#birds').css('display','none');
+		$('#characters').css('display','none');
+		$('#guatemala').css('display','none');
+		$('#insects').css('display','none');
+		$('#nature').css('display','none');
+	  	$('#aquatic_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#383838');
+		$('#abstract_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#birds_item .links').css('color','#FFFFFF');
+		$('#characters_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#characters_item .links').css('color','#FFFFFF');
+		$('#guatemala_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#FFFFFF');
+		$('#insects_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#insects_item .links').css('color','#FFFFFF');
+		$('#nature_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#nature_item .links').css('color','#FFFFFF');
+	  break;
+	case "birds":
+		$('#abstract').css('display','none');
+	  	$('#aquatic').css('display','none');
+		$('#birds').css('display','block');
+		$('#characters').css('display','none');
+		$('#guatemala').css('display','none');
+		$('#insects').css('display','none');
+		$('#nature').css('display','none');
+	  	$('#abstract_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#FFFFFF');
+		$('#aquatic_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#birds_item .links').css('color','#383838');
+		$('#characters_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#characters_item .links').css('color','#FFFFFF');
+		$('#guatemala_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#FFFFFF');
+		$('#insects_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#insects_item .links').css('color','#FFFFFF');
+		$('#nature_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#nature_item .links').css('color','#FFFFFF');
+	  break;
+	case "characters":
+		$('#abstract').css('display','none');
+	  	$('#aquatic').css('display','none');
+		$('#birds').css('display','none');
+		$('#characters').css('display','block');
+		$('#guatemala').css('display','none');
+		$('#insects').css('display','none');
+		$('#nature').css('display','none');
+	  	$('#abstract_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#FFFFFF');
+		$('#aquatic_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#birds_item .links').css('color','#FFFFFF');
+		$('#characters_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#characters_item .links').css('color','#383838');
+		$('#guatemala_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#FFFFFF');
+		$('#insects_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#insects_item .links').css('color','#FFFFFF');
+		$('#nature_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#nature_item .links').css('color','#FFFFFF');
+	  break;
+	case "guatemala":
+	    $('#abstract').css('display','none');
+	  	$('#aquatic').css('display','none');
+		$('#birds').css('display','none');
+		$('#characters').css('display','none');
+		$('#guatemala').css('display','block');
+		$('#insects').css('display','none');
+		$('#nature').css('display','none');
+	  	$('#abstract_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#FFFFFF');
+		$('#aquatic_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#birds_item .links').css('color','#FFFFFF');
+		$('#characters_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#characters_item .links').css('color','#FFFFFF');
+		$('#guatemala_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#383838');
+		$('#insects_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#insects_item .links').css('color','#FFFFFF');
+		$('#nature_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#nature_item .links').css('color','#FFFFFF');
+	  break;
+	case "insects":
+	    $('#abstract').css('display','none');
+	  	$('#aquatic').css('display','none');
+		$('#birds').css('display','none');
+		$('#characters').css('display','none');
+		$('#guatemala').css('display','none');
+		$('#insects').css('display','block');
+		$('#nature').css('display','none');
+	  	$('#abstract_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#FFFFFF');
+		$('#aquatic_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#birds_item .links').css('color','#FFFFFF');
+		$('#characters_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#characters_item .links').css('color','#FFFFFF');
+		$('#guatemala_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#FFFFFF');
+		$('#insects_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#insects_item .links').css('color','#383838');
+		$('#nature_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#nature_item .links').css('color','#FFFFFF');
+	  break;
+	case "nature":
+	    $('#abstract').css('display','none');
+	  	$('#aquatic').css('display','none');
+		$('#birds').css('display','none');
+		$('#characters').css('display','none');
+		$('#guatemala').css('display','none');
+		$('#insects').css('display','none');
+		$('#nature').css('display','block');
+	  	$('#abstract_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#abstract_item .links').css('color','#FFFFFF');
+		$('#aquatic_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#aquatic_item .links').css('color','#FFFFFF');
+		$('#birds_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#birds_item .links').css('color','#FFFFFF');
+		$('#characters_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#characters_item .links').css('color','#FFFFFF');
+		$('#guatemala_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#guatemala_item .links').css('color','#FFFFFF');
+		$('#insects_item .arrow img').css('background','url(images/spacer.png) no-repeat');
+	  	$('#insects_item .links').css('color','#FFFFFF');
+		$('#nature_item .arrow img').css('background','url(images/arrow.png) no-repeat');
+	  	$('#nature_item .links').css('color','#383838');
+	  default:
+	  break;
+	}
+	
+}
+</script>
+
+        <!-- Mobile slide up menu -->
+        <script type="text/javascript">	
+		function ShowMenu(){
+		if( $('.mobileDropdown').css('display') == 'block'){$('.mobileDropdown').slideUp();}else{$('.mobileDropdown').slideDown();}}
+		
+		function collapseMenu(){$('.mobileDropdown').slideUp();}
+		</script>
+        
+<script type="text/javascript">
+function validateForm(){
+	var error = "";
+	var stayorplay = document.forms["form2"]["stayorplay"].value;
+	var fname = document.forms["form2"]["first_name"].value;
+	var lname = document.forms["form2"]["last_name"].value;
+	var email = document.forms["form2"]["email"].value;
+	var comments = document.forms["form2"]["comments"].value;
+	var atpos = email.indexOf("@");
+    var dotpos = email.lastIndexOf(".");
+			
+	if (fname == null || fname == "" || !isNaN(fname)){error += " first name";}
+	
+	if (lname == null || lname == "" || !isNaN(lname)){error += " last name";}
+	
+	if (comments == null || comments == ""){error += " comments";}
+		
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=email.length || email == null || email == "") {error += " email";}
+	
+	if (stayorplay == null || stayorplay == ""){}
+	else{error += " No bots please";}
+	
+	if(error != ""){
+	alert("Please enter:"+error);
+	return false;}
+}
+</script>
+
+</head>
+<body onLoad="MM_preloadImages('images/dino_img.gif','images/contact_header_img.gif','images/shows_header_background1.gif','images/work_header_img.gif')">
+
+<div id="homeWrapper"><!-- HOME WRAPPER -->
+<div class="backgroundh"></div>
+<div id="toTop">Back to Top</div>
+
+	<div id="homeContent"><!-- HOME CONTENT -->
+    
+    	<div id="homeBackground"><!-- HOME BACKGROUND:END -->                    
+        
+            <div id="homeText" class="white"><!-- HOME TEXT -->
+            	
+			<div id="homeText2"><!-- HOME2 TEXT -->
+            <h1>Carlos B Martini</h1>
+            	<div id="homeText3">
+                    <div id="quote_left"><p class="font38 grey">“</p></div>
+                    <div id="quote_right"><p class="font38 grey">You better yourself not through the comparison of others, but through the improvement of your previous self.”</p>
+                    <p class="showLink"><a name="showsJump" class="font30">Current shows and bio &gt;</a></p></div>
+                    </div>
+            	</div><!-- HOME TEXT2:END -->
+                
+            </div><!-- HOME TEXT:END -->
+            
+            <div id="mobileLinks"><!-- MOBILE LINKS -->
+            	<div id="mobileLinksFirst">
+                	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                </div>
+                <div id="mobileLinksSecond">
+                	<div id="mobileLinksSpacer">
+                    	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                    </div>
+                    <div id="mobileLinks1">
+               	    	<a href="#workWrapper" title="Work" class="menuLinx"><img src="images/work_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                   </div>
+                  <div id="mobileLinks2">
+                    	<a href="#showsWrapper" title="Shows" class="menuLinx"><img src="images/shows_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                  <div id="mobileLinks3">
+                    	<a href="http://www.carlosbmartini.blogspot.com" target="_blank" title=""><img src="images/blog_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                  <div id="mobileLinks4">
+                    	<a href="#contactWrapper" title="Contact" class="menuLinx"><img src="images/contact_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                  <div id="mobileLinks5">
+                    	<a href="http://www.twitter.com" target="_blank" title=""><img src="images/twitter_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                  <div id="mobileLinks6">
+                    	<a href="https://www.facebook.com/carlosbmartini" target="_blank" title=""><img src="images/facebook_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                  <div id="mobileLinks7">
+                    	<a href="https://dribbble.com/Canbeda" target="_blank" title=""><img src="images/drooble_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                    
+                   <div id="mobileLinks8">
+                    	<a href="https://instagram.com/canbeda" target="_blank" title=""><img src="images/instagram_button_mobile.gif" width="270" height="38" alt="" border="0"></a>
+                    </div>
+                    
+                </div>
+                <div id="mobileLinksThird">
+                	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                </div>
+            </div><!-- MOBILE LINKS:END -->
+            
+             <div id="hiddenHeroSpacer">
+       	     <img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+             </div>       
+          <div id="homeImage">
+       	    	<img src="images/dino_img.gif" width="1024" height="713" border="0" alt="">
+            </div>
+            
+        </div><!-- HOME BACKGROUND:END -->
+        
+    </div><!-- HOME CONTENT:END -->
+    
+ <div id="menu"><!-- MENU -->
+ 	<div id="menuContent"><!-- MENU CONTENT -->
+    	<div id="menuLeft">
+          <div id="menuName">
+                <span class="fontb32 white">Carlos B Martini</span>
+           </div>
+         </div>
+         <div id="menuRight">
+         
+                <div id="LinzNav"><!--topnav1 DIV-->
+                
+                <ul id="linkzContiner">
+                	<li class="linkz white fontr16" id="menuWork">
+                       <a name="workJump" title="WORK" class="menuLinx" onClick="menu_hover('work')">WORK</a>
+                    </li>
+                	<li class="linkz white fontr16" id="menuShows">
+                		<a name="showsJump" title="SHOWS" class="menuLinx" onClick="menu_hover('shows')">SHOWS</a>
+                    </li>
+                    <li class="linkz white fontr16" id="menuBlog">
+                		<a href="http://www.carlosbmartini.blogspot.com" target="_blank" title="BLOG">BLOG</a>
+                    </li>
+                    <li class="linkz white fontr16" id="menuContact">
+                		<a name="contactJump" title="CONTACT" class="menuLinx" onClick="menu_hover('contact')">CONTACT</a>
+                    </li>
+                </ul>
+                                
+                
+            <div id="mobileNav"><!-- MOBILE NAV -->
+                    
+        	<div id="mobileHeading">
+                <div id="mobile_nav_products">
+           	    	<p class="fontr16 menu_txt"><a onClick="ShowMenu()">MENU</a></p></div>
+            </div>
+            
+            
+            <div class="mobileDropdown">
+            	<ul>
+                	<li id="menu_item1_mobile"><a href="#workWrapper" onClick="collapseMenu()" class="mobileMenuLinx font14" name="workJump">WORK</a></li>
+                    <li id="menu_item2_mobile"><a href="#showsWrapper" onClick="collapseMenu()" class="mobileMenuLinx font14" name="showsJump">SHOWS</a></li>
+                    <li id="menu_item3_mobile"><a href="http://www.carlosbmartini.blogspot.com" onClick="collapseMenu()" target="_blank" class="mobileMenuLinx font14">BLOG</a></li>
+                    <li id="menu_item4_mobile"><a href="#contactWrapper" onClick="collapseMenu()" class="mobileMenuLinx font14" name="contactJump">CONTACT</a></li>
+                </ul>
+            </div>	
+            
+        </div><!-- MOBILE NAV:END -->
+        
+                </div><!--topnav1 DIV:END-->
+                
+            <div id="menu_icons"><!--MENU ICONS-->
+            
+            <div id="linkDivider" class="left">
+                <span><img src="images/spacer.gif" width="1" height="1" border="0" alt=""></span>
+            </div>
+            <div class="icons" id="twitterIcon">
+                <a href="https://twitter.com/Canbeda" title="twitter" target="_blank"><img src="images/twitter_icon.png" width="30" height="30" alt="" border="0"></a>
+            </div>
+            <div class="icons" id="facebookIcon">
+                <a href="https://www.facebook.com/carlosbmartini" title="facebook" target="_blank"><img src="images/facebook_icon.png" width="30" height="30" alt="" border="0"></a>
+            </div>
+            <div class="icons" id="dribbbleIcon">
+                <a href="https://dribbble.com/Canbeda" title="dribbble" target="_blank"><img src="images/dribbble_icon.png" width="30" height="30" alt="" border="0"></a>
+            </div>
+            <div class="icons" id="instagramIcon">
+                <a href="https://instagram.com/canbeda" title="instragram" target="_blank"><img src="images/insta_icon.png" width="30" height="30" alt="" border="0"></a>
+            </div>
+            
+            </div><!--MENU ICONS:END-->
+            
+           </div>
+        <!--<div class="clear"></div>-->
+    </div><!-- MENU CONTENT:END -->
+</div><!-- MENU:END -->
+<a name="workJump1" id="workJump"></a>
+<div class="clear"></div>
+
+
+    
+    <div id="workWrapper"><!-- WORK WRAPPER -->
+    
+    <div id="workWrapper1"><!-- WORK WRAPPER1 -->
+    <div class="backgroundw"></div>
+        <div id="workTopContent"><!-- WORK TOP CONTENT -->
+        
+          <div id="workHeadText">
+            <h2 class="blue">Work</h2>
+            </div> 
+            <div id="workHeader">
+                <img src="images/work_header_img.gif" width="1024" height="275" border="0" alt="">
+            </div>
+             
+            </div><!-- WORK TOP CONTENT:END -->
+                      
+            </div><!-- WORK WRAPPER1:END -->
+            
+            <div id="workWrapper2"><!-- WORK WRAPPER2 -->
+            
+                <div id="workBottomContent"><!-- WORK BOTTOM CONTENT -->
+                
+                <div id="workGallary"><!-- WORK GALLARY -->
+                	<div id="gallarySpacer">
+                    	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                    </div>
+                	<div id="workGallaryContainer">
+                        <div id="workGallaryLeft">
+                        	<div id="workNavLeft">
+                            	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                            </div>
+                            <div id="workNavCenter">
+                            	<div id="workList"><!-- WORK LIST -->
+                                	<ul>
+                                    	<li id="abstract_item"><div class="arrow"><img src="images/spacer.gif" width="26" height="26" alt=""></div><a class="links font25" onClick="TopicSelect('abstract')">Abstract</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                        <li id="aquatic_item"><div class="arrow"><img src="images/spacer.gif" width="26" alt="" height="26"></div><a onClick="TopicSelect('aquatic')" class="links font25">Aquatic Life</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                        <li id="birds_item"><div class="arrow"><img src="images/spacer.gif" width="26" height="26" alt=""></div><a onClick="TopicSelect('birds')" class="links font25">Birds</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                        <li id="characters_item"><div class="arrow"><img src="images/spacer.gif" width="26" alt="" height="26"></div><a onClick="TopicSelect('characters')" class="links font25">Characters</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                       <li id="guatemala_item"><div class="arrow"><img src="images/spacer.gif" width="26" height="26" alt=""></div><a onClick="TopicSelect('guatemala')" class="links font25">Guatemala</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                        <li id="insects_item"><div class="arrow"><img src="images/spacer.gif" width="26" height="26" alt=""></div><a onClick="TopicSelect('insects')" class="links font25">Insects</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                        <li id="nature_item"><div class="arrow"><img src="images/spacer.gif" width="26" height="26" alt=""></div><a onClick="TopicSelect('nature')" class="links font25">Nature</a><div class="clear"><img src="images/spacer.gif" width="1" height="1" alt="" border="0"></div></li>
+                                    </ul>
+                                    
+                                </div><!-- WORK LIST -->
+                                
+                                <div id="workListMobile">
+                                	<select class="menuListMobile" data-native-menu="false" >
+                                    	<option value="abstract">Abstract</option>
+                                        <option value="aquatic">Aquatic Life</option>
+                                        <option value="birds">Birds</option>
+                                        <option value="characters">Characters</option>
+                                        <option value="guatemala">Guatemala</option>
+                                        <option value="insects">Insects</option>
+                                        <option value="nature">Nature</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                        	<div id="workNavRight">
+                            	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                            </div>
+                        </div>
+                        <div id="workGallaryRight" class="content">
+                        	<div class="work" id="abstract"> <!-- abstract work -->
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract1.jpg" title="Intricate Bubbles - Ink on Paper (7 1/2&quot; x 8 1/4&quot;)"><img src="images/thumb/abstract/abstract1.jpg" alt="Bubbles" style="font-weight:bold;" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract2.jpg" title="Rothko Blocks - Latex Paint and Oil on Canvas (36&quot;x36&quot;)"><img src="images/thumb/abstract/abstract2.jpg" alt="Blocks" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract3.jpg" title="Purple Shells - Oil and Ink on Paper (8 1/2&quot; x 2 1/2&quot;)"><img src="images/thumb/abstract/abstract3.jpg" alt="Shells" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract4.jpg" title="Shells Between Red - Latex Paint and Ink on Canvas (30&quot;x40&quot;)"><img src="images/thumb/abstract/abstract4.jpg" alt="Shells" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract6.jpg" title="Stripes - Ink and Oil on Paper (7&quot;x11&quot;)"><img src="images/thumb/abstract/abstract6.jpg" alt="Stripes" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract7.jpg" title="Warm Edges - Oil and Ink on Paper (8 1/2&quot; x 2 1/2&quot;)"><img src="images/thumb/abstract/abstract7.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract8.jpg" title="B&amp;W - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/abstract/abstract8.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract9.jpg" title="B&amp;W - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/abstract/abstract9.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract10.jpg" title="B&amp;W - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/abstract/abstract10.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract11.jpg" title="B&amp;W Banner - Ink on Paper (2&quot; x 8&quot;)"><img src="images/thumb/abstract/abstract11.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract12.jpg" title="Black, White &amp; Gold - Ink and Liquid Gold Lead on Paper (5 1/2&quot; x 7&quot;)"><img src="images/thumb/abstract/abstract12.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract13.jpg" title="Color Burst - Oil, Ink and Liquid Gold Leaf on Paper (2 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/abstract/abstract13.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract14.jpg" title="Color Burst - Oil, Ink and Liquid Gold Leaf on Paper (5 1/2&quot; x 7&quot;)"><img src="images/thumb/abstract/abstract14.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract15.jpg" title="Gold Circles - Ink and Liquid Gold Leaf on Paper (3 1/2&quot; x 5&quot;)"><img src="images/thumb/abstract/abstract15.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract16.jpg" title="Skull Smoke - Ink and Liquid Gold Leaf on Paper (19&quot; x 24&quot;)"><img src="images/thumb/abstract/abstract16.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract17.jpg" title="Cat Abstract - Ink and Airbrush Paint (5&quot; x 5&quot;)"><img src="images/thumb/abstract/abstract17.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract18.jpg" title="Green River - Oil and Ink on Paper (5&quot; x 5&quot;)"><img src="images/thumb/abstract/abstract18.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract19.jpg" title="Abstract Stripes - Oil and Ink on Paper (3&quot; x 12&quot;)"><img src="images/thumb/abstract/abstract19.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="abstract" href="images/full/abstract/abstract20.jpg" title="Golden Bubbles - Ink and Liquid Goldleaf on Paper (3 1/2&quot; x 7&quot;)"><img src="images/thumb/abstract/abstract20.jpg" alt="" ></a>
+                                
+                            </div><!-- abstract work:end -->
+                            
+                            <div class="work" id="aquatic"> <!-- aquaitic work -->
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic1.jpg" title="Fish Turquoise Blue - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic1.jpg" alt="Fish" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic2.jpg" title="Goldfish Green - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic2.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic3.jpg" title="Big 3 Fish - Acrylic and Ink on Canvas (24&quot;x24&quot;)"><img src="images/thumb/aquatic/aquatic3.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic4.jpg" title="Seahorse Pink - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic4.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic5.jpg" title="Fish Black &amp; White - Oil and Ink on Canvas (12&quot;x12&quot;)"><img src="images/thumb/aquatic/aquatic5.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic6.jpg" title="Fish Blue - Acrylic and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic6.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic7.jpg" title="3 Fish Green - Acrylic and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic7.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic8.jpg" title="Fish Green - Acrylic and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic8.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic9.jpg" title="5 Fish Blue - Latex Paint and Ink on Paper (19 3/4&quot; x 9&quot;)"><img src="images/thumb/aquatic/aquatic9.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic10.jpg" title="Flirt Pink Fish - Acrylic and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic10.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic11.jpg" title="Red Fish - Acrylic and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic11.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic13.jpg" title="Fish Dark Blue - Latex Paint and Ink on Canvas (5&quot;x5&quot;)"><img src="images/thumb/aquatic/aquatic13.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic14.jpg" title="Fish Grey - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic14.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic15.jpg" title="5 Fish Teal - Oil and Ink on Paper (12&quot;x12&quot;)"><img src="images/thumb/aquatic/aquatic15.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic16.jpg" title="Goldfish Yellow - Oil Acrylic and Ink on Canvas (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic16.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic17.jpg" title="Koi Fish Pink - Oil, acrylic and ink on canvas (12&quot;x12&quot;)"><img src="images/thumb/aquatic/aquatic17.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic18.jpg" title="Goldfish Gold - Liquid Gold Leaf and Ink on Paper (5&quot;x5&quot;)"><img src="images/thumb/aquatic/aquatic18.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic19.jpg" title="Jellyfish Green - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic19.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic20.jpg" title="Seahorse Green - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic20.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic21.jpg" title="School of Guppies - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic21.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic22.jpg" title="Guppy Yellow Green - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic22.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic23.jpg" title="Fish Hot Pink - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic23.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic24.jpg" title="Jellyfish Green - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic24.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic25.jpg" title="Jellyfish Pink - Oil, Acrylic and Ink on Cavas (12&quot;x12&quot;)"><img src="images/thumb/aquatic/aquatic25.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic27.jpg" title="Jellyfish Trio - Oil and Ink on Paper (20&quot;x20&quot;)"><img src="images/thumb/aquatic/aquatic27.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic28.jpg" title="Jellyfish White - Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic28.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic29.jpg" title="Jellyfish White & Gold - Liquid Gold Leaf, Oil and Ink on Paper (3 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/aquatic/aquatic29.jpg" alt="" ></a>
+                             
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic31.jpg" title="Koi Pink 5 - Oil and Ink on Paper (12&quot;x12&quot;)"><img src="images/thumb/aquatic/aquatic31.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic32.jpg" title="Lobster Red - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic32.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic33.jpg" title="Mayan Turtle - Oil and Ink on Paper (5 1/2&quot; x 7 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic33.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic34.jpg" title="Mermaid - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic34.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic35.jpg" title="Squid Blue - Acrylic and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic35.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic36.jpg" title="Octopus Hot Pink - Oil, Acrylic and Ink on Canvas (9&quot;x12&quot;)"><img src="images/thumb/aquatic/aquatic36.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic37.jpg" title="Octopus White - Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic37.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic38.jpg" title="Fish Orange - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic38.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic39.jpg" title="Goldfish Pink - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic39.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic41.jpg" title="Sassy Pink Fish - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic41.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic43.jpg" title="Fish Deep Purple - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic43.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic44.jpg" title="Seahorse Red - Acrylic and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic44.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic45.jpg" title="Guppy Red - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic45.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic46.jpg" title="Seahorse Diptych - Acrylic and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic46.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic47.jpg" title="Shrimp Orange - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic47.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic48.jpg" title="Fish Sienna - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic48.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic49.jpg" title="Starfish - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic49.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic50.jpg" title="Tunnel Fish Green - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/aquatic/aquatic50.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic51.jpg" title="Funky Fish Yellow - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic51.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic52.jpg" title="Fish Yellow 1 - Oil, Acrylic and Ink on Canvas (8&quot;x8&quot;)"><img src="images/thumb/aquatic/aquatic52.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="aquatic" href="images/full/aquatic/aquatic53.jpg" title="Under Water - Acrylic and Ink on Canvas (3 1/2&quot;x10&quot;)"><img src="images/thumb/aquatic/aquatic53.jpg" alt="" ></a>
+                            </div><!-- aquaitic work:end -->
+                            
+                            <div class="work" id="birds"> <!-- birds work -->
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds1.jpg" title="Birds on Wires Teal - Oil Paint on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/birds/birds1.jpg" alt="" ></a>
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds2.jpg" title="I Know Why the Caged Bird Sings - Printed on Photo Paper (8 1/2&quot; x 11&quot;)"><img src="images/thumb/birds/birds2.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds3.jpg" title="Seagul Swirls - Oil on Canvas (8&quot; x 16&quot;)"><img src="images/thumb/birds/birds3.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds4.jpg" title="Birds on Wires Triptych - Ink and Oil on Paper (Each Panel - 9&quot;x26&quot;)"><img src="images/thumb/birds/birds4.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds5.jpg" title="Bird on Branch - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/birds/birds5.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds6.jpg" title="Birds on Tree Yellow - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/birds/birds6.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds7.jpg" title="Birds on Wires Sky Blue - Oil and Ink on Paper (19 3/4&quot; x 9&quot;)"><img src="images/thumb/birds/birds7.jpg" alt="" ></a>
+
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds8.jpg" title="Birds on Wires Yellow Green - Oil and Ink on Paper (20&quot;x20&quot;)"><img src="images/thumb/birds/birds8.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds9.jpg" title="Birds on Wires Orange - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/birds/birds9.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds10.jpg" title="Crows - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/birds/birds10.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds11.jpg" title="Birds on Branch - Oil and Ink on Paper (5 1/2&quot; x 5 /1/2&quot;)"><img src="images/thumb/birds/birds11.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds12.jpg" title="Full Moon Birds - Oil and Ink on Paper (2 1/2&quot; x 8 1/2&quot;)"><img src="images/thumb/birds/birds12.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds13.jpg" title="Goose Black &amp; White - Latex Paint and White Ink on Canvas (4&quot;x5&quot;)"><img src="images/thumb/birds/birds13.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds14.jpg" title="Birds on a Wire Grey - Oil and Ink on Paper (20&quot;x20&quot;)"><img src="images/thumb/birds/birds14.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds15.jpg" title="Hummingbird Hot Pink - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/birds/birds15.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds16.jpg" title="Birds on Wire Pink - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/birds/birds16.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds17.jpg" title="Seaguls - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/birds/birds17.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds18.jpg" title="Striped Hummingbird - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/birds/birds18.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds19.jpg" title="Yellow Birds on Wires Yellow - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/birds/birds19.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds20.jpg" title="Gorey Bird - Ink on Paper (6&quot;x7&quot;)"><img src="images/thumb/birds/birds20.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds21.jpg" title="Black Bird - Ink on Paper (6&quot;x7&quot;)"><img src="images/thumb/birds/birds21.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds22.jpg" title="Big Hat - Ink on Paper (3&quot;x9 1/2&quot;)"><img src="images/thumb/birds/birds22.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds23.jpg" title="Geometric Birds - Ink on Paper (8&quot;x9&quot;)"><img src="images/thumb/birds/birds23.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds24.jpg" title="Geometric Birds - Ink on Paper (8&quot;x9&quot;)"><img src="images/thumb/birds/birds24.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds25.jpg" title="Codornis - Ink on Paper (3 1/2&quot;x7&quot;)"><img src="images/thumb/birds/birds25.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds26.jpg" title="Gallo - Ink and Oil on Paper (5&quot;x5&quot;)"><img src="images/thumb/birds/birds26.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="birds" href="images/full/birds/birds27.jpg" title="Turtle Dove - Ink and Oil on Paper (3&quot;x9 1/2&quot;)"><img src="images/thumb/birds/birds27.jpg" alt="" ></a>
+                                
+                            </div><!-- birds work:end -->
+                            
+                            <div class="work" id="characters"> <!-- characters work -->
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters1.jpg" title="Astronaut - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/characters/characters1.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters2.jpg" title="Aviator - Oil, Acrylic and Ink on Canvas (12&quot;x12&quot;)"><img src="images/thumb/characters/characters2.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters3.jpg" title="Crows and Aviator - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters3.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters4.jpg" title="Boxer - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/characters/characters4.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters5.jpg" title="Corvette - Latex Paint, Acrylic and Ink on Canvas (24&quot;x24&quot;)"><img src="images/thumb/characters/characters5.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters6.jpg" title="Fuzzy Sea Monster - Oil and Ink on Paper (2 1/2&quot; x 8 1/2&quot;)"><img src="images/thumb/characters/characters6.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters7.jpg" title="Calaca - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters7.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters8.jpg" title="Dinosaur Waters - Oil and Ink on Paper (5 1/2&quot; x 13&quot;)"><img src="images/thumb/characters/characters8.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters9.jpg" title="El Grito - Oil and Ink on Paper (8 1/2&quot; x 2 1/2&quot;)"><img src="images/thumb/characters/characters9.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters10.jpg" title="Fencer - Oil and Ink on Paper (8&quot;x8&quot;)"><img src="images/thumb/characters/characters10.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters11.jpg" title="Astronaut Geisha - Oil, Acrylic and Ink on Canvas (12&quot;x12&quot;)"><img src="images/thumb/characters/characters11.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters12.jpg" title="Blue Portrait - Oil on Canvas (9&quot;x12&quot;)"><img src="images/thumb/characters/characters12.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters13.jpg" title="Pink Portrait - Oil on Canvas (9&quot;x12&quot;)"><img src="images/thumb/characters/characters13.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters14.jpg" title="Louboutins - Liquid Gold Leaf and Ink on Paper (3 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters14.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters15.jpg" title="Long Hair - Ink and Oil on Paper (3&quot;x24&quot;)"><img src="images/thumb/characters/characters15.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters16.jpg" title="Lucha Libre Mask - Oil, Ink & Glitter on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters16.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters17.jpg" title="Beetles & Marie Antoinette - Latex Paint and Ink on Canvas (12&quot;x12&quot;)"><img src="images/thumb/characters/characters17.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters18.jpg" title="Skull - Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters18.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters19.jpg" title="Oaxaca Monster - Oil and Ink on Paper (5&quot; x 5 3/4&quot;)"><img src="images/thumb/characters/characters19.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters20.jpg" title="Orange Portrait - Oil on Canvas (9&quot;x12&quot;)"><img src="images/thumb/characters/characters20.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters21.jpg" title="Robot - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters21.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters22.jpg" title="Tuxedo Burst - Oil and Ink on Paper (5&quot;x5&quot;)"><img src="images/thumb/characters/characters22.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters23.jpg" title="Lips - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/characters/characters23.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters24.jpg" title="Dino - Oil and Ink on Paper (3 1/2&quot; x 5&quot;)"><img src="images/thumb/characters/characters24.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters25.jpg" title="Man In Bowler - Oil and Ink on Paper (11&quot; x 17&quot;)"><img src="images/thumb/characters/characters25.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="characters" href="images/full/characters/characters26.jpg" title="Krampus - Ink on Paper (10&quot; x 10&quot;)"><img src="images/thumb/characters/characters26.jpg" alt="" ></a>
+                                
+                            </div><!-- characters work:end -->
+                            
+                            <div class="work" id="guatemala"> <!-- guatemala work -->
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala1.jpg" title="Mayan God - Ink on Paper (5&quot;x6&quot;)"><img src="images/thumb/guatemala/guatemala1.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala2.jpg" title="Barrilete 3 - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala2.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala3.jpg" title="Barrilete 2 - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala3.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala4.jpg" title="Barrilete 1 - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala4.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala5.jpg" title="Barrilete 5 - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala5.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala6.jpg" title="Barrilete 4 - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala6.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala7.jpg" title="Boy with Elephant Mask - Oil, Ink, Pencil on Paper (11&quot;x14&quot;)"><img src="images/thumb/guatemala/guatemala7.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala8.jpg" title="Boy with Horns Mask - Oil, Ink, Pencil on Paper (11&quot;x14&quot;)"><img src="images/thumb/guatemala/guatemala8.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala9.jpg" title="Cementerio - Oil and Ink on Paper (2 1/2&quot; x 8 1/2&quot;)"><img src="images/thumb/guatemala/guatemala9.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala10.jpg" title="Untitlted - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/guatemala/guatemala10.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala11.jpg" title="Untitlted - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/guatemala/guatemala11.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala12.jpg" title="Untitlted - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/guatemala/guatemala12.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala13.jpg" title="Untitlted - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/guatemala/guatemala13.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala14.jpg" title="Untitlted - Ink on Paper (2 1/2&quot; x 3 1/2&quot;)"><img src="images/thumb/guatemala/guatemala14.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala15.jpg" title="Boy with Deer Mask - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala15.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala16.jpg" title="El Cacho - Oil and Ink on Paper (2 1/2&quot; x 8 1/2&quot;)"><img src="images/thumb/guatemala/guatemala16.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala17.jpg" title="Girl with Leopard Mask - Oil, Ink, Pencil on Paper (11&quot;x14&quot;)"><img src="images/thumb/guatemala/guatemala17.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala18.jpg" title="Girl with Bird Mask - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala18.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala19.jpg" title="Día de los Muertos en Guatemala - Oil and Ink on Paper (12&quot;x32&quot;)"><img src="images/thumb/guatemala/guatemala19.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala20.jpg" title="Kids with Mask - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/guatemala/guatemala20.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala21.jpg" title="La Siguanaba - Oil, Ink and Gold Leaf on Paper (6 1/2&quot; x 8 1/2&quot;)"><img src="images/thumb/guatemala/guatemala21.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala22.jpg" title="Maximón - Oil and Ink on Paper (5&quot;x6&quot;)"><img src="images/thumb/guatemala/guatemala22.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala23.jpg" title="Mayan Glyph - Ink on Paper (5&quot;x6&quot;)"><img src="images/thumb/guatemala/guatemala23.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="guatemala" href="images/full/guatemala/guatemala24.jpg" title="Girl with Bird Mask - Ink and oil on Paper (5 1/2&quot; x 8&quot;)"><img src="images/thumb/guatemala/guatemala24.jpg" alt="" ></a>
+                                
+                            </div><!-- guatemala work:end -->
+                            
+                            <div class="work" id="insects"> <!-- insects work -->
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects1.jpg" title="Bee! - Oil on Canvas (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects1.jpg" alt="" ></a>
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects2.jpg" title="Bees - Liquid Gold Leaf, Oil and Ink on Paper (3 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects2.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects3.jpg" title="Beetle Blue - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects3.jpg" alt="" ></a>
+                        
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects4.jpg" title="Bugs! Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects4.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects5.jpg" title="Beetles Pink - Oil and Ink on Canvas (4&quot;x5&quot;)"><img src="images/thumb/insects/insects5.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects6.jpg" title="Flies - Latex Paint and Ink on Canvas (4&quot;x5&quot;)"><img src="images/thumb/insects/insects6.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects7.jpg" title="Flies 2 - Latex Paint and Ink on Canvas (8&quot;x8&quot;)"><img src="images/thumb/insects/insects7.jpg" alt="" ></a>
+
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects8.jpg" title="Geometric Beetle - Oil and Ink on Paper (3&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects8.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects9.jpg" title="Hornet - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects9.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects10.jpg" title="Ladybug - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects10.jpg" alt="" ></a>
+                                
+                                <a class="fancybox-buttons" data-fancybox-group="insects" href="images/full/insects/insects11.jpg" title="Large Beetles - Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/insects/insects11.jpg" alt="" ></a>
+                                                                
+                            </div><!-- insects work:end -->
+
+                            <div class="work" id="nature"><!-- nature work --> 
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature1.jpg" title="Armadillo - Liquid Gold Leaf and Ink on Paper (5&quot; x 5&quot;)"><img src="images/thumb/nature/nature1.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature2.jpg" title="Elephant - Liquid Gold Leaf, Oil and Ink on Paper (5&quot; x 5&quot;)"><img src="images/thumb/nature/nature2.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature3.jpg" title="Leaf Aqua - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/nature/nature3.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature4.jpg" title="Fox - Liquid Gold Leaf, Oil and Ink on Paper (5&quot; x 5&quot;)"><img src="images/thumb/nature/nature4.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature5.jpg" title="Giraffes - Liquid Gold Leaf, Oil and Ink on Paper (5&quot; x 5&quot;)"><img src="images/thumb/nature/nature5.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature6.jpg" title="Murakami Baboon - Oil and Ink on Paper (3&quot; x 9 1/2&quot;)"><img src="images/thumb/nature/nature6.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature7.jpg" title="Mountain Peaks - Liquid Gold Leaf, Oil and Ink on Paper (5&quot; x 5&quot;)"><img src="images/thumb/nature/nature7.jpg" alt="" ></a>
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature8.jpg" title="Mushroom Trio - Acrylic and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/nature/nature8.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature9.jpg" title="Branch - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/nature/nature9.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature10.jpg" title="Tree Yellow - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/nature/nature10.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature11.jpg" title="Tree Green - Oil and Ink on Paper (5 1/2&quot; x 5 1/2&quot;)"><img src="images/thumb/nature/nature11.jpg" alt="" ></a>
+                            
+                            <a class="fancybox-buttons" data-fancybox-group="nature" href="images/full/nature/nature12.jpg" title="Trees - Oil and Ink on Canvas (12&quot; x 12&quot;)"><img src="images/thumb/nature/nature12.jpg" alt="" ></a>
+                            
+                            </div><!-- nature work:end -->
+                                                        
+                        </div>
+                        
+                 	</div>       
+                </div>  <!-- WORK GALLARY -->
+                
+                <div class="clear"></div><!-- CLEAR DEM DIVS -->
+                  
+                </div><!-- WORK BOTTOM CONTENT:END -->
+            
+            </div><!-- WORK WRAPPER2 -->
+        
+    </div><!-- WORK WRAPPER:END -->
+    <a name="showsJump1" id="showsJump"></a>
+   <div class="clear"></div>  <!--CLEAR DEM DIVS -->
+    
+     <div id="showsWrapper"><!-- SHOWS WRAPPER -->
+    
+    <div id="showsWrapper1"><!-- SHOWS WRAPPER1 -->
+    
+    
+    
+        <div id="showsTopContent"><!-- SHOWS TOP CONTENT -->
+        
+        
+        <div id="showsHeader1">
+                <img src="images/shows_header_background1.gif" width="1024" height="410" border="0" alt="">
+            </div>
+            
+            
+        
+          <div id="showsHeadText">
+            <h2 class="orange">Shows</h2>
+            </div>
+            <div id="showsHeader">
+                <img src="images/shows_header_background.gif" width="1024" height="275" border="0" alt="">
+            </div>
+            
+            </div><!-- SHOWS TOP CONTENT:END -->
+                        
+            </div><!-- SHOWS WRAPPER1:END -->
+            
+            <div id="showsWrapper2"><!-- SHOWS WRAPPER2 -->
+            
+                <div id="showsBottomContent"><!-- SHOWS BOTTOM CONTENT -->
+                
+                <div id="showsMainLeft">
+                
+                	<div id="showsLeftFirst">
+               	    	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                        </div>
+                    <div id="showsLeftSecond">
+                    	<div id="showsHeading">
+                        	<span class="font49 white">Carlos B Martini</span>
+                        </div>
+                        <div id="showsText">
+                        	<p class="fonth14">I&rsquo;m a Chicago based artist originally from Guatemala who has become known for my simple, yet colorful paintings mainly on paper and canvas. My combination of black and white subject matter with bright and colorful backgrounds make for a unique contrast, creating cheerful and unique pieces adaptable to any environment. All pieces reflect my love for color, contrast, detail, and movement. I have created pieces ranging in style, size and medium, and I have begun to experiment with other mediums such as glass and mirrors. Although my work appears uncomplicated, a fair amount of detail has been dedicated to every single piece. If any of my pieces catches your eye and you would like to know more about it, feel free to contact me through my site's <a href="#contactJump" title="Contact">contact page</a>.</p>
+                        </div>
+                        <div id="showsQuote">
+                        	<div id="quote_left1"><p class="font26">“</p></div>
+                    		<div id="quote_right"><p class="font26">Art is the way in which I can disconnect and share what I can't put into words.”</p></div>
+                        </div>
+                    </div>
+                    <div id="showsLeftThird">
+                    	<img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                    </div>
+                    
+                
+                </div> 
+                
+                <div id="showsMainRight">
+                
+                	<div id="showsMainRightContainer">
+                
+                	<div id="showsMainRContainerLeft">
+                    <img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                    </div>
+                	<div id="showsMainRContainer">
+                    
+                        <div id="showsHeadingRight">
+                           <span class="fontb35">Current Shows</span>
+                         </div>
+                         
+                         <div id="showsInfoRight">
+                           <span>
+                           	<p class="white showsInfoHeading font16">Fountain Studios</p>
+                            <p class="fontr14">2015 HOLIDAY MARKET, 604 Grand Avenue,<br>Brooklyn, NY 11238</p>
+                            <p class="fontr14"><a href="http://fountainstudiosny.com/home.html" target="_blank" title="Fountain Studios">fountainstudiosny.com</a></p>
+<!--                            <p class="fontr14">773.857.1361</p>
+-->							<p class="fontr14"><br>Friday, December 18th</p>
+                            <p class="fontr14">6:00 -10:00pm</p>
+                            <p class="fontr14"><br>Saturday, December 19th</p>
+                            <p class="fontr14">12:00 - 6:00pm</p></span>
+                         </div>
+                         
+                         <div id="showsTwitterRight">
+                           <a href="https://www.instagram.com/canbeda/">Canbeda on Instagram</a>
+                           <div id="insta-wrap">
+                           
+                           <div id="instafeed"></div>
+                           
+
+							</div>
+
+<!--
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'sky',
+        clientId: '179234058'
+    });
+    feed.run();
+</script>-->
+      
+                        <!--
+                        ,
+        accessToken: '179234058.1677ed0.efc354f9189d4640843797f3c4c5dd82'
+                        
+                        -->   
+<!--    <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
+                         </div>
+                     
+                     </div><!-- SHOWS MAIN R CONTAINER:END -->
+                     
+                     <div id="showsMainRContainerRight">
+                    <img src="images/spacer.gif" width="1" height="1" alt="" border="0">
+                    </div>
+                    
+                    </div><!-- SHOWS MAIN RIGHT CONTAINER:END -->
+                    
+                </div> <!-- SHOWS MAIN RIGHT:END -->
+                  
+                </div><!-- SHOWS BOTTOM CONTENT:END -->
+                
+                <div class="clear"></div><!-- CLEAR DEM DIVS -->
+            
+            </div><!-- SHOWS WRAPPER2 -->
+            
+            <!--<div class="clear"></div> CLEAR DEM DIVS -->
+        
+    </div><!-- SHOWS WRAPPER:END -->
+    
+    <a name="contactJump1" id="contactJump"></a>
+    <div class="clear"></div><!-- CLEAR DEM DIVS -->
+    
+    
+    
+    <div id="contactWrapper"><!-- CONTACT WRAPPER -->
+    
+    <div id="contactWrapper1"><!-- CONTACT WRAPPER1 -->
+    <div class="backgroundc"></div>
+        <div id="contactTopContent"><!-- CONTACT TOP CONTENT -->
+        
+          <div id="contactHeadText">
+            <h2 class="purple">Contact</h2>
+            </div>
+            <div id="contactHeader">
+                <img src="images/contact_header_img.gif" width="1024" height="275" border="0" alt="">
+            </div>
+            
+            </div><!-- CONTACT TOP CONTENT:END -->
+                        
+            </div><!-- CONTACT WRAPPER1:END -->
+            
+            <div id="contactWrapper2"><!-- CONTACT WRAPPER2 -->
+            
+                <div id="contactBottomContent"><!-- CONTACT BOTTOM CONTENT -->
+                <form name="form2" method="post" action="php/mailto.php" onSubmit="return validateForm()">
+                
+                <div id="contactMainLeft">
+                	<div id="contactTopLeft">
+                    	<div id="contactTopLeftFirst">
+                   	    <img src="images/spacer.gif" width="90" height="90" border="0" alt=""></div>
+                        <div id="contactTopLeftSecond">
+                        
+                        	<table border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td class="labeltxt"> <label><span class="font18 white">First Name</span></label></td>
+                              </tr>
+                              <tr>
+                                <td> <input type="text" name="first_name" maxlength="20"  class="inputb"></td>
+                              </tr>
+                              <tr>
+                                <td><img src="images/spacer.gif" width="20" height="20" alt="" border="0"></td>
+                              </tr>
+                              <tr>
+                                <td class="labeltxt"><label><span class="white font18">Last Name</span></label></td>
+                              </tr>
+                              <tr>
+                                <td><input  type="text" name="last_name" maxlength="20" class="inputb"></td>
+                              </tr>
+                              <tr>
+                                <td><img src="images/spacer.gif" width="20" height="20" alt="" border="0"></td>
+                              </tr>
+                              <tr>
+                                <td class="labeltxt"><label><span class="white font18">Email Address</span></label>
+</td>
+                              </tr>
+                              <tr>
+                                <td><input  type="text" name="email" maxlength="30" class="inputb"></td>
+                              </tr>
+                            </table>
+                            
+                        </div>
+                        <div id="contactTopLeftThird">
+                        	<img src="images/spacer.gif" width="155" height="155" border="0" alt="">
+                        </div>
+                        
+                    </div>
+                    <div class="clear"></div><!-- CLEAR DEM DIVS -->
+                    
+                    <div id="contactBottomLeft">
+               	    	<img src="images/contact_bird2_img.gif" width="588" height="192" border="0" alt="">
+                        <p id="copyright" class="fontr10 grey">&copy;2015 Carols B. Martini</p>
+                    </div>
+                
+                
+                </div> 
+                <div id="contactMainRight">
+                
+               	  <div id="contactBottomRightLeft">
+                  
+                  <div id="contactBottomRightLeftContainer"><!-- around table -->
+                  
+                    	<table border="0" cellspacing="0" cellpadding="0">
+                         <tr class="noshow">
+                 			<td><input type="text" name="stayorplay" maxlength="7"></td>
+                 		 </tr>
+                          <tr>
+                            <td class="labeltxt"><label id="comments" class="txtleft"><span class="white font18">Comments</span></label></td>
+                          </tr>
+                          <tr>
+                            <td><textarea name="comments" maxlength="450" class="inputbox" contenteditable="true" spellcheck="true"></textarea></td>
+                          </tr>
+                        </table>
+                        
+                        </div> <!-- END -->
+                        
+                        <!--<div class="clear"></div>  CLEAR DEM DIVS -->
+                        
+                        <div id="mobileBird">
+                   	    <img src="images/mobile_bird.gif" width="148" height="140" alt="" border="0" >
+                        <p id="copyright" class="fontr10 grey">&copy;2015 Carols B. Martini</p>
+                        </div>
+                    
+                    
+                        <div id="submitButton">
+                        <input type="submit" value="Submit" id="submitbtn" name="submit" class="white fontr18">
+                        </div>
+                    
+                   </div><!-- END -->
+                    
+                    <div id="contactBottomRightRight">
+               	    <img src="images/contact_bird1_img.gif" width="83" height="90" alt="" border="0" ></div>
+                    
+                <div class="clear"></div><!-- CLEAR DEM DIVS -->
+                
+                
+                </div>  
+                
+                
+                </form>
+                
+                <div class="clear"></div><!-- CLEAR DEM DIVS -->
+                  
+                </div><!-- CONTACT BOTTOM CONTENT:END -->
+            
+            </div><!-- CONTACT WRAPPER2 -->
+        
+    </div><!-- CONTACT WRAPPER:END -->
+
+</div><!-- HOME WRAPPER:END -->
+
+
+
+    		<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+
+			<script type="text/javascript">
+				    jQuery(window).load(function() {
+    				TopicSelect('abstract');
+				jQuery("#workGallaryRight").mCustomScrollbar({
+					autoHideScrollbar:false});
+				})(jQuery);
+			</script>
+        
+</body>
+</html>
